@@ -1,5 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router";
+import { Link, router } from "expo-router";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Formik } from "formik";
 import React, { useState } from "react";
@@ -161,11 +161,11 @@ export default function SignInScreen() {
                       onPress={() => setRememberMe(!rememberMe)}
                       textStyle={styles.checkboxText}
                     />
-                    <TouchableOpacity>
-                      <Text style={styles.forgotPassword}>
-                        Forgot Password?
-                      </Text>
-                    </TouchableOpacity>
+                    <Link href="/auth/ForgotPassword" asChild>
+                      <TouchableOpacity>
+                        <Text style={styles.forgotPassword}>Forgot Password?</Text>
+                      </TouchableOpacity>
+                    </Link>
                   </View>
 
                   <TouchableOpacity
